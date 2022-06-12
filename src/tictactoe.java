@@ -2,7 +2,19 @@ import javax.swing.*;
 
 public class tictactoe {
     public static void main(String[] args) {
-        pedirPosicao();
+
+        pegarJogador();
+    }
+
+    public static void pegarJogador() {
+        String jogador = "";
+        for (int i = 0; i < 3; i++) {
+            jogador = "X";
+            JOptionPane.showMessageDialog(null, "vez do jogador: " + jogador + "");
+            for (int j = 0; j < 3; j++) {
+                jogador = "O";
+            }
+        }
     }
 
     public static int[][] tabelaJogo() {
@@ -20,4 +32,5 @@ public class tictactoe {
             }
         }
     }
+
 }
