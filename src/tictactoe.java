@@ -2,24 +2,30 @@ import javax.swing.*;
 
 public class tictactoe {
     public static void main(String[] args) {
-
-        pegarJogador();
-    }
-
-    public static void pegarJogador() {
-        String jogador = "";
-        for (int i = 0; i < 3; i++) {
-            jogador = "X";
-            JOptionPane.showMessageDialog(null, "vez do jogador: " + jogador + "");
-            for (int j = 0; j < 3; j++) {
-                jogador = "O";
-            }
-        }
+        pegarJogador(preencheJogador());
     }
 
     public static int[][] tabelaJogo() {
         int matriz[][] = new int[3][3];
         return matriz;
+    }
+// preencheJogador == Metodo que auto preenche o jogador(X || O)
+    public static String[] preencheJogador() {
+        String jogador[] = new String[9];
+        for (int i = 0; i < 9; i++) {
+            if (i % 2 == 0) {
+                jogador[i] = "X";
+            } else {
+                jogador[i] = "O";
+            }
+        }
+        return jogador;
+    }
+
+    public static void pegarJogador(String[] jogador) {
+        for (int i = 0; i < 9; i++) {
+            JOptionPane.showMessageDialog(null, "vez do jogador: " + jogador[i] + "");
+        }
     }
 
     public static void pedirPosicao() {
